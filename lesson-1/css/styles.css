@@ -6,7 +6,7 @@ html {
 }
 p em {
 	background-color: lightblue;
-	border: 2px solid darkblue;
+	border: 2px solid rgb(0, 139, 127);
 	border-radius: 5px;
 	padding: 0.2em;
 	cursor: pointer;
