@@ -1,16 +1,24 @@
 // STEP 1: Initialize and declare variables
-
-
+const displayedImage = document.querySelector('.displayed-img');
+const thumbBar = document.querySelector('.thumb-bar');
 /* STEP 2: Loop 5 times to create the <img> elements */
-
+for(let i = 1; i <= 5; i++) {
+	const newImage = document.createElement('img');
+	
 		/* STEP 3a: Create a new DOM node - an image element */
-
+		newImage.setAttribute('src', 'images/pic' + i + '.jpg');
+		console.log(newImage);
 		/* STEP 3b: Set the src attribute to be the path of one of the images inside the images folder, using setAttribute() */
-
+thumbBar.append(newImage);
 		/* Append the new image element to the thumbBar div, named in STEP 1 */
 
 		/* STEP 3c: Build event handler for each <img> */
-
+newImage.addEventListener("click", function(event) {
+	let imgSrc = event.target.getAttribute('src');
+	console.log(imgSrc);
+});
+}	
+	
 
 /* STEP 4: Function to change the src of the main <img> */
 
