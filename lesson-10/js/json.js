@@ -28,9 +28,9 @@ populate();
 /* STEP 9b: Build out the populateHeader() function */
 function populateHeader(jsonObj) {
     // Create the H1 element
-    let headerH1= document.createEl('h1');
+    let headerH1= document.createElement('h1');
     // Grab the company name from the JSON object and use it for the text node
-    headerH1.textContent = iScream.companyName;
+    headerH1.textContent = jsonObj.companyName;
 
     // Inject the complete H1 element into the DOM, inside the HEADER
     header.appendChild(headerH1);   
@@ -52,7 +52,7 @@ function showTopFlavors(jsonObj) {
         img.setAttribute('src','images/${topFlavors[i]["image"]}');
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
-        let ingredients = topFlavors[i][ingredients]
+        let ingredients = topFlavors[i]["ingredients"];
             // add the ingredient to the UL
         for(let j=0; j < ingredients.length; j++){
             let listItem = document.createElement('li');
