@@ -29,10 +29,12 @@ for (let i = 0; i < button.length; i++) {
 }
 /* STEP 4a: addEventListener() and removeEventListener()
 Let's rewrite the above code with these two methods - comment out the A, B, C buttons and restore the original button - then comment out the above code */
-
+btn.addEventListener('onclick', bgChange);
 
 /* STEP 4b: We can also put the entire bgChange() function inside an anonymous function, if we'd like: */
-
+btn.addEventListener('click', function() {
+    bgChange();
+}
 
 
 /* STEP 4c: We can now remove the event listener … comment out the above code in STEP 4b, and then add another event listener, then remove it (silly, yes, but try it all the same) */

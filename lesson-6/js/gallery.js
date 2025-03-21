@@ -21,13 +21,22 @@ newImage.addEventListener("click", function(event) {
 	
 
 /* STEP 4: Function to change the src of the main <img> */
+function displayedImage(value) {	
+	displayedImage.setAttribute('src', value);
+}
 
 	// Rewrite the src attribute of the .displayed-img element
 
 
 /* STEP 5: Event Delegation
 Instead of adding event handlers for each image, how about event delegation? Build a click handler on the parent element, and capture each target (and its attributes) from the event object */
+thumbBar.addEventListener('click', function(event) {
+	console.log(event.target);
 
+	if(event.target.tagName === 'IMG') {
+		displayedImage(event.target & event.target.getAttribute('src'));
+	}
+}
 	// event.target is the element that was clicked
 
 		// grab the src attribute of the element that was clicked
