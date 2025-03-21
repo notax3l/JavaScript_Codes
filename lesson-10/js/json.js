@@ -36,26 +36,36 @@ function populateHeader(jsonObj) {
     header.appendChild(headerH1);   
 };
 /* STEP 10b: Assemble the showTopFlavors() function */
-function showTopFlavors() {
+function showTopFlavors(jsonObj) {
     // STEP 10c: Attache the JSON topFlavors object to a variable
-    //let topFlavors = jsonObj.topFlavors;
+    let topFlavors = jsonObj.topFlavors;
     // STEP 10d: Loop through the topFlavors object
     for (let i = 0; i < topFlavors.length; i ++) {
         // STEP 10e: build HTML elements for the content
-        
+        let article = document.createElement('article');
+        let h2 = document.createElement('h2');
+        let img = document.createElement('img');
+        let ul = document.createElement('ul');
 
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-        
+        h2.textContent = topFlavors[i].name;
+        img.setAttribute('src','images/${topFlavors[i]["image"]}');
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
-        
+        let ingredients = topFlavors[i][ingredients]
             // add the ingredient to the UL
-
+        for(let j=0; j < ingredients.length; j++){
+            let listItem = document.createElement('li');
+            listItem.textContent=ingredients[j];
+            ul.appendChild(listItem);
+        };
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
-        
+        article.appendChild(h2);
+        article.appendChild(img);
+        article.appendChild(ul);
         // STEP 10i: Append each complete ARTICLE element to the SECTION element
-        
-    };
+        section.appendChild(article);
+    
 };
 // STEP 11: The instructor will edit the JSON file - refresh your page to see the updated content
 
@@ -63,4 +73,4 @@ function showTopFlavors() {
 
 // This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
 
-// A special thanks to https://openclipart.org/detail/285225/ice-cream-cones for the awesome ice cream cone illustrations
+}// A special thanks to https://openclipart.org/detail/285225/ice-cream-cones for the awesome ice cream cone illustrations
